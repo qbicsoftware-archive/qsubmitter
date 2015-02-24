@@ -2,10 +2,12 @@ package submitter;
 
 import java.util.List;
 
+import submitter.parameters.InputList;
 import submitter.parameters.ParameterSet;
 
-public abstract class Workflow {
+public class Workflow {
 	protected ParameterSet params;
+	protected InputList data;
 	protected List<Node> nodes;
 
 	private String name;
@@ -13,12 +15,14 @@ public abstract class Workflow {
 	private String version;
 	private String id;
 
-	protected Workflow(String id, String name, String description,
-			String version) {
+	public Workflow(String id, String name, String description,
+			String version, InputList data, ParameterSet params) {
 		this.name = name;
 		this.description = description;
 		this.version = version;
 		this.id = id;
+		this.data = data;
+		this.params = params;
 	}
 
 	/**
@@ -58,5 +62,9 @@ public abstract class Workflow {
 
 	public String getID() {
 		return id;
+	}
+
+	public InputList getData() {
+		return data;
 	}
 }
