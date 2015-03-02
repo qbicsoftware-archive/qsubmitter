@@ -52,4 +52,7 @@ public class InputList { // TODO extends Parameter?
 			param.validate();
 		}
 	}
+	   public int size(){
+	      return data.size();
+	    }
 }
